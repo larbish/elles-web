@@ -6,7 +6,7 @@
   },
   "parserPreset": {
     "parserOpts": {
-      "headerPattern": "(\\w*)\\((\\w*)\\):\\s(.*)\\s([A-Z]{3}-[0-9]+)",
+      "headerPattern": "(\\w*)\\((\\w*)\\):\\s(.*)\\s",
       "headerCorrespondence": ["type", "scope", "subject", "ticket"]
     }
   }
