@@ -1,23 +1,23 @@
 <template>
   <section>
-    <h1 class="flex justify-center">Weekends</h1>
+    <h1 class="flex justify-center">Les weekends du festoche</h1>
 
     <pre>
-            {{ weekends }}
+        {{ weekends }}
     </pre>
   </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import { Weekend } from './models';
+import { FestivalWeekend } from './models';
 
 @Component
 export default class WeekendsComponent extends Vue {
-  weekends: Weekend[] = [];
+  weekends: FestivalWeekend[] = [];
 
   async fetch(): Promise<void> {
-    await (this as any).$strapi.$weekends.find().then((res: Weekend[]) => {
+    await (this as any).$strapi.find('festival-weekends').then((res: FestivalWeekend[]) => {
       this.weekends = res;
     });
   }
