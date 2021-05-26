@@ -1,6 +1,11 @@
+const strapiBaseUri = process.env.API_URL || 'http://localhost:1337';
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  env: {
+    strapiBaseUri,
+  },
 
   // loading: '~/components/loading.vue',
 
@@ -52,6 +57,6 @@ export default {
 
   strapi: {
     entities: ['weekends'],
-    url: process.env.STRAPI_API || 'http://localhost:1337',
+    url: strapiBaseUri,
   },
 };

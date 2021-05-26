@@ -1,11 +1,4 @@
-export interface FestivalDay {
-  id: number;
-  title: string;
-  dateAndHour: string;
-  cover: string;
-  artists: string;
-  color: string;
-}
+import { FestivalDay } from './days';
 
 export interface FestivalWeekend {
   id: number;
