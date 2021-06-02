@@ -1,33 +1,33 @@
 <template>
   <section>
-    <NuxtLink :to="slugUrl(weekend)">
-      <v-card class="h-full mx-auto relative">
-        <v-img
-          class="h-full"
-          :src="getStrapiMedia(weekend.cover[0].formats.thumbnail.url)"
-          :alt="weekend.cover[0].name"
-        >
-          <div class="absolute top-4 right-4 text-white text-right font-bold text-2xl">
+    <NuxtLink :to="generateUrl(weekend)">
+      <v-card class="tw-relative">
+        <v-img class="border-0" :src="getStrapiMedia(weekend.cover[0].formats.small.url)" :alt="weekend.cover[0].name">
+          <div class="tw-absolute tw-top-4 tw-left-4 tw-text-white tw-text-left tw-font-bold">
             <h1>{{ weekend.title }}</h1>
-            <h1>{{ weekend.startDate }} {{ weekend.endDate }}</h1>
+            <h2>{{ weekend.startDate }} {{ weekend.endDate }}</h2>
           </div>
         </v-img>
       </v-card>
+      <!-- <pre>
+      {{ weekend }}
+      </pre> -->
     </NuxtLink>
   </section>
 </template>
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator';
 import { getStrapiMedia } from '../utils/medias';
+import { slugify } from '../utils/url';
 import { FestivalWeekend } from '../models/weekends';
 
 @Component
 export default class WeekendCardComponent extends Vue {
-  @Prop()
+  @Prop({ default: 'Input Property' })
   weekend: FestivalWeekend;
 
-  slugUrl(weekend: object): string {
-    return '/' + weekend.title.toLowerCase().replaceAll(' ', '-') + '-weekend';
+  generateUrl(weekend: FestivalWeekend): string {
+    return `/${slugify(weekend.title)}_${weekend.id}`;
   }
 
   getStrapiMedia(url: string): string {

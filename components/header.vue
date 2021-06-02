@@ -1,9 +1,9 @@
 <template>
   <div>
     <v-app-bar prominent dark>
-      <v-app-bar-nav-icon class="md:invisible"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon class="md:tw-invisible"></v-app-bar-nav-icon>
 
-      <nuxt-link class="h-full flex content-center" to="/">
+      <nuxt-link class="tw-h-full flex tw-content-center" to="/">
         <img src="~/assets/elles-logo.png" alt="elles logo" />
       </nuxt-link>
 

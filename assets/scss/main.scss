@@ -24,10 +24,9 @@ h1 {
   font-size: 18px;
   letter-spacing: 0.1em;
   font-weight: bold;
-  color: black;
 
   @media (min-width: 992px) {
-    font-size: 2vw !important;
+    font-size: 2rem !important;
   }
 }
 
@@ -35,10 +34,9 @@ h2 {
   letter-spacing: 0.1em;
   font-size: 17px;
   font-weight: bold;
-  color: black;
 
   @media (min-width: 992px) {
-    font-size: 1.8vw !important;
+    font-size: 1.8rem !important;
   }
 }
 
@@ -46,9 +44,8 @@ h3 {
   letter-spacing: 0.1em;
   font-size: 16px;
   font-weight: bold;
-  color: black;
 
   @media (min-width: 992px) {
-    font-size: 1.6vw !important;
+    font-size: 1.5rem !important;
   }
 }

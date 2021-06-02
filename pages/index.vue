@@ -1,20 +1,15 @@
 <template>
   <section>
-    <div class="container">
-      <h1 class="flex justify-center">Les weekends du festoche</h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <weekend-card v-for="weekend in weekends" :key="weekend.id" :weekend="weekend"></weekend-card>
-      </div>
-      <pre>
-        {{ weekends }}
-      </pre>
+    <h1 class="tw-flex tw-justify-center">Les weekends du festoche</h1>
+    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-4">
+      <weekend-card v-for="weekend in weekends" :key="weekend.id" :weekend="weekend"></weekend-card>
     </div>
   </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import { FestivalWeekend } from '../../models/weekends';
+import { FestivalWeekend } from '../models/weekends';
 
 @Component
 export default class WeekendsComponent extends Vue {

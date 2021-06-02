@@ -1,7 +1,14 @@
 <template>
   <div>
     <Header />
-    <nuxt />
+    <!-- <div class="sm:block hidden">sm 640</div>
+    <div class="md:block hidden">md 768</div>
+    <div class="lg:block hidden">lg 1024</div>
+    <div class="xl:block hidden">xl 1280</div>
+    <div class="2xl:block hidden">2xl 1536</div> -->
+    <div class="tw-container">
+      <nuxt />
+    </div>
     <Footer />
   </div>
 </template>
