@@ -1,14 +1,18 @@
 <template>
   <section>
     <NuxtLink :to="generateUrl(weekend)">
-      <v-card class="tw-relative">
-        <v-img class="border-0" :src="getStrapiMedia(weekend.cover[0].formats.small.url)" :alt="weekend.cover[0].name">
-          <div class="tw-absolute tw-top-4 tw-left-4 tw-text-white tw-text-left tw-font-bold">
-            <h1>{{ weekend.title }}</h1>
-            <h2>{{ weekend.startDate }} {{ weekend.endDate }}</h2>
-          </div>
-        </v-img>
-      </v-card>
+      <div class="relative">
+        <nuxt-img
+          class="border-0 w-100"
+          :src="getStrapiMedia(weekend.cover[0].formats.small.url)"
+          :alt="weekend.cover[0].name"
+        >
+        </nuxt-img>
+        <div class="absolute top-4 left-4 text-white text-left font-bold">
+          <h1>{{ weekend.title }}</h1>
+          <h2>{{ weekend.startDate }} {{ weekend.endDate }}</h2>
+        </div>
+      </div>
       <!-- <pre>
       {{ weekend }}
       </pre> -->

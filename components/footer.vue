@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1 class="tw-flex tw-justify-center">Footer</h1>
+    <h1 class="flex justify-center">Footer</h1>
   </section>
 </template>
 

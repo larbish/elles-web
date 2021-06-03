@@ -1,9 +1,12 @@
 <template>
   <section>
-    <h1 class="tw-flex tw-justify-center">Les weekends du festoche</h1>
-    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-4">
+    <h1 class="flex justify-center">Les weekends du festoche</h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <weekend-card v-for="weekend in weekends" :key="weekend.id" :weekend="weekend"></weekend-card>
     </div>
+    <!-- <pre>
+        {{ weekends }}
+      </pre -->
   </section>
 </template>
 

@@ -6,7 +6,7 @@
     <div class="lg:block hidden">lg 1024</div>
     <div class="xl:block hidden">xl 1280</div>
     <div class="2xl:block hidden">2xl 1536</div> -->
-    <div class="tw-container">
+    <div class="container bg-red-800">
       <nuxt />
     </div>
     <Footer />
