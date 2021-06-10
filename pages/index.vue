@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8 md:my-24">
-      <img class="m-auto py-10" src="../assets/pauline_viardot.png" alt="image-elles-festival" />
+      <img class="m-auto py-10" src="../assets/pauline_viardot.png" alt="Pauline Viardot un temps pour elle" />
       <div class="flex flex-wrap content-center justify-end mt-0 mx-3 md:col-span-2 md:mx-0 text-elles-blue">
         <div class="flex items-center mb-6 w-2/3">
           <h2 class="pr-3">L'ÉDITO</h2>

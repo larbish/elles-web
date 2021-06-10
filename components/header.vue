@@ -1,22 +1,45 @@
 <template>
   <nav class="bg-elles-grey-blue">
-    <div class="">
-      <div class="">
-        <div class="sm:hidden">
-          <!-- Mobile menu button-->
-          <button type="button" class="">
-            <!-- Menu is close -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-10 w-10 m-2 text-black"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              @click="toggleMenu()"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+    <!-- MOBILE -->
+    <div class="sm:hidden">
+      <!-- Menu button-->
+      <button type="button" class="">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-10 w-10 m-2 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          @click="toggleMenu()"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <!-- DESKTOP -->
+    <div class="hidden sm:block text-black">
+      <div class="grid grid-cols-3 h-full">
+        <div class="grid grid-cols-2 justify-items-center content-end">
+          <div class="">Nous Découvrir</div>
+          <div class="">Programmation</div>
+        </div>
+        <div class="flex justify-center content-center">
+          <img src="../assets/logo-un-temps-pour-elles.png" alt="Logo festival un temps pour elle" />
+        </div>
+        <div class="grid grid-rows-3">
+          <div class="row-span-2">
+            <div class="grid grid-cols-2 h-full">
+              <div class="col-start-2 flex content-center justify-center">
+                <img class="mx-4 w-10" src="~assets/facebook.svg" />
+                <img class="mx-4 w-10" src="~assets/instagram.svg" />
+                <img class="mx-4 w-10" src="~assets/youtube.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 justify-items-center content-end">
+            <div class="">Informations pratiques</div>
+            <div class="">Nous soutenir</div>
+          </div>
         </div>
       </div>
     </div>

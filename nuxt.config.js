@@ -55,8 +55,16 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
+  // Strapi
   strapi: {
     entities: ['weekends'],
     url: strapiBaseUri,
+  },
+
+  // Google fonts
+  googleFonts: {
+    families: {
+      Alegreya: true,
+    },
   },
 };
