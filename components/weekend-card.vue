@@ -9,8 +9,8 @@
         >
         </nuxt-img>
         <div class="absolute top-4 left-4 text-white text-left font-bold">
-          <h1>{{ weekend.title }}</h1>
-          <h2>{{ weekend.startDate }} {{ weekend.endDate }}</h2>
+          <h1>{{ weekend.title.toUpperCase() }}</h1>
+          <h2>{{ formatDate(weekend.startDate) }} - {{ formatDate(weekend.endDate) }}</h2>
         </div>
       </div>
     </NuxtLink>
@@ -29,6 +29,10 @@ export default class WeekendCardComponent extends Vue {
 
   generateUrl(weekend: FestivalWeekend): string {
     return `/${slugify(weekend.title)}_${weekend.id}`;
+  }
+
+  formatDate(date: Date) {
+    return String(date).split('-').reverse().join('/');
   }
 
   getStrapiMedia(url: string): string {
