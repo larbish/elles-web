@@ -48,7 +48,7 @@
     <div
       ref="mobileMenu"
       class="
-        z-10
+        z-50
         p-4
         bg-elles-blue
         fixed

@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h1 class="flex justify-center">Les weekends du festoche</h1>
     <div class="flex justify-center">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <weekend-card v-for="weekend in weekends" :key="weekend.id" :weekend="weekend"></weekend-card>
@@ -29,9 +28,6 @@
         </p>
       </div>
     </div>
-    <!-- <pre>
-        {{ weekends }}
-      </pre -->
   </section>
 </template>
 
