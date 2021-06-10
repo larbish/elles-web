@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="Z-100">
     <NuxtLink :to="generateUrl(weekend)">
       <div class="relative">
         <nuxt-img
@@ -13,9 +13,6 @@
           <h2>{{ weekend.startDate }} {{ weekend.endDate }}</h2>
         </div>
       </div>
-      <!-- <pre>
-      {{ weekend }}
-      </pre> -->
     </NuxtLink>
   </section>
 </template>

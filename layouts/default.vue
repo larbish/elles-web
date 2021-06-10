@@ -1,28 +1,25 @@
 <template>
   <div>
     <Header />
-    <!-- <div class="sm:block hidden">sm 640</div>
-    <div class="md:block hidden">md 768</div>
-    <div class="lg:block hidden">lg 1024</div>
-    <div class="xl:block hidden">xl 1280</div>
-    <div class="2xl:block hidden">2xl 1536</div> -->
-    <div class="container bg-red-800">
+    <div class="container">
       <nuxt />
     </div>
     <Footer />
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator';
 import Header from '~/components/header.vue';
 import Footer from '~/components/footer.vue';
 
-export default {
-  components: {
+@Component
+export default class LayoutComponent extends Vue {
+  components = {
     Header,
     Footer,
-  },
-};
+  };
+}
 </script>
 
 <style>
