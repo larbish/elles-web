@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8 md:my-24">
-      <img class="m-auto py-10" src="../assets/pauline_viardot.png" alt="Pauline Viardot un temps pour elle" />
+      <nuxt-img class="m-auto py-10" src="/pauline_viardot.png" alt="Pauline Viardot un temps pour elle"></nuxt-img>
       <div class="flex flex-wrap content-center justify-end mt-0 mx-3 md:col-span-2 md:mx-0 text-elles-blue">
         <div class="flex items-center mb-6 w-2/3">
           <h2 class="pr-3">L'ÉDITO</h2>
@@ -28,18 +28,67 @@
         </p>
       </div>
     </div>
+    <!-- <swiper ref="mySwiper" :options="swiperComponentOption">
+      <swiper-slide>Slide 1</swiper-slide>
+      <swiper-slide>Slide 2</swiper-slide>
+      <swiper-slide>Slide 3</swiper-slide>
+      <swiper-slide>Slide 4</swiper-slide>
+      <swiper-slide>Slide 5</swiper-slide>
+      <div slot="pagination" class="swiper-pagination"></div>
+    </swiper> -->
+    <div v-swiper:mySwiper="swiperComponentOption">
+      <div class="swiper-wrapper">
+        <div v-for="swipper in swippers" :key="swipper.src" class="swiper-slide">
+          <nuxt-img class="w-full" :src="swipper.src" :alt="swipper.alt"></nuxt-img>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
   </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-// import { Carousel, Slide } from 'vue-carousel';
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
 import { FestivalWeekend } from '../models/weekends';
 import { weekendsStore } from '~/store';
+import 'swiper/swiper-bundle.css';
 
 @Component
 export default class WeekendsComponent extends Vue {
   weekends: FestivalWeekend[] = weekendsStore.weekends;
+
+  swippers: { src: string; alt: string }[] = [
+    // {
+    //   src: '/swipper-home-page-2.png',
+    //   alt: 'TODO',
+    // },
+    {
+      src: '/3.png',
+      alt: 'TODO',
+    },
+    {
+      src: '/4.png',
+      alt: 'TODO',
+    },
+  ];
+
+  swiperComponentOption = {
+    loop: true,
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  };
+
+  components = {
+    Swiper,
+    SwiperSlide,
+  };
+
+  directives = {
+    swiper: directive,
+  };
 }
 </script>
 
