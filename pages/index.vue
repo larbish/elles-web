@@ -1,12 +1,30 @@
 <template>
   <section>
-    <div class="flex justify-center">
+    <div v-swiper:mySwiper1="swiperComponentOption" class="mt-5">
+      <div class="swiper-wrapper">
+        <!-- <div class="swiper-slide">
+          <youtube :video-id="videoId" :player-vars="{ autoplay: 1 }" />
+        </div> -->
+        <div class="swiper-slide">
+          <nuxt-img class="m-auto" src="/banner_title_hp.png" alt="Festival un temps pour elles"></nuxt-img>
+        </div>
+        <div class="swiper-slide">
+          <nuxt-img
+            class="m-auto"
+            src="/banner_artists_hp.png"
+            alt="Les artistes du festival un temps pour elles"
+          ></nuxt-img>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center mt-5">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <weekend-card v-for="weekend in weekends" :key="weekend.id" :weekend="weekend"></weekend-card>
       </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8 md:my-24">
-      <nuxt-img class="m-auto py-10" src="/pauline_viardot.png" alt="Pauline Viardot un temps pour elle"></nuxt-img>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4 md:my-12">
+      <nuxt-img class="m-auto py-10" src="/pauline_viardot.png" alt="Pauline Viardot un temps pour elles"></nuxt-img>
       <div class="flex flex-wrap content-center justify-end mt-0 mx-3 md:col-span-2 md:mx-0 text-elles-blue">
         <div class="flex items-center mb-6 w-2/3">
           <h2 class="pr-3">L'ÉDITO</h2>
@@ -28,7 +46,7 @@
         </p>
       </div>
     </div>
-    <div v-swiper:mySwiper="swiperComponentOption">
+    <div v-swiper:mySwiper2="swiperComponentOption">
       <div class="swiper-wrapper">
         <div v-for="swipper in swippers" :key="swipper.src" class="swiper-slide">
           <nuxt-img class="w-full" :src="swipper.src" :alt="swipper.alt"></nuxt-img>
@@ -50,7 +68,10 @@ import 'swiper/swiper-bundle.css';
 export default class WeekendsComponent extends Vue {
   weekends: FestivalWeekend[] = weekendsStore.weekends;
 
-  mySwiper: SwiperClass;
+  // videoId = 'I_-5LUzJYy8';
+
+  mySwiper1: SwiperClass;
+  mySwiper2: SwiperClass;
 
   swippers: { src: string; alt: string }[] = [
     {
@@ -139,10 +160,11 @@ export default class WeekendsComponent extends Vue {
   mounted(): void {
     // Trick autoplay for slider
     setInterval(() => {
-      this.mySwiper.slideNext(1000);
+      this.mySwiper2.slideNext(1000);
+      this.mySwiper1.slideNext(1000);
     }, 3500);
   }
 }
 </script>
 
-<style></style>
+<style lang="scss"></style>
