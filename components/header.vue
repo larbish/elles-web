@@ -44,10 +44,32 @@
         <div class="grid grid-cols-2 justify-items-center content-end">
           <NuxtLink to="discover-us" class="nav-item">Nous découvrir</NuxtLink>
           <div class="nav-item relative">
-            <div class="cursor-pointer" @click="dropdownOpen = !dropdownOpen">Programmation</div>
-            <div v-if="dropdownOpen" class="absolute left-0 w-full bg-white rounded shadow-xl z-50">
-              <NuxtLink v-for="weekend in weekends" :key="weekend.id" class="capitalize" to="generateUrl">
-                &#8627; {{ weekend.title }}
+            <div class="cursor-pointer" @click="toggleDropdown()">Programmation</div>
+            <div
+              ref="dropdown"
+              class="
+                absolute
+                opacity-0
+                invisible
+                transition
+                duration-150
+                ease-in-out
+                top-9
+                -left-20
+                w-96
+                bg-white
+                rounded
+                shadow-2xl
+                z-50
+              "
+            >
+              <NuxtLink
+                v-for="weekend in weekends"
+                :key="weekend.id"
+                :to="generateUrl(weekend)"
+                class="block capitalize py-1 px-3 hover:bg-gray-200"
+              >
+                {{ weekend.title }}
               </NuxtLink>
             </div>
           </div>
@@ -157,7 +179,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
+import { Component, Vue, Watch } from 'nuxt-property-decorator';
 import { slugify } from '../utils/url';
 import { FestivalWeekend } from '../models/weekends';
 import { weekendsStore } from '~/store';
@@ -169,6 +191,11 @@ export default class HeaderComponent extends Vue {
   open = false;
 
   dropdownOpen = false;
+
+  @Watch('$route', { immediate: true, deep: true })
+  onUrlChange() {
+    if (this.dropdownOpen) this.toggleDropdown();
+  }
 
   generateUrl(weekend: FestivalWeekend): string {
     return `/${slugify(weekend.title)}_${weekend.id}`;
@@ -182,6 +209,16 @@ export default class HeaderComponent extends Vue {
 
     (this as any).$refs.mobileMenu.classList.add(classToSet);
     (this as any).$refs.mobileMenu.classList.remove(classToRemove);
+  }
+
+  toggleDropdown(): void {
+    this.dropdownOpen = !this.dropdownOpen;
+
+    const classToSet = this.dropdownOpen ? ['opacity-100', 'visible'] : ['opacity-0', 'invisible'];
+    const classToRemove = this.dropdownOpen ? ['opacity-0', 'invisible'] : ['opacity-100', 'visible'];
+
+    (this as any).$refs.dropdown.classList.add(...classToSet);
+    (this as any).$refs.dropdown.classList.remove(...classToRemove);
   }
 }
 </script>
