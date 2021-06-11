@@ -49,7 +49,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
+import { directive } from 'vue-awesome-swiper';
+import { Swiper as SwiperClass } from 'swiper';
 import { FestivalWeekend } from '../models/weekends';
 import { weekendsStore } from '~/store';
 import 'swiper/swiper-bundle.css';
@@ -58,11 +59,9 @@ import 'swiper/swiper-bundle.css';
 export default class WeekendsComponent extends Vue {
   weekends: FestivalWeekend[] = weekendsStore.weekends;
 
+  mySwiper: SwiperClass;
+
   swippers: { src: string; alt: string }[] = [
-    // {
-    //   src: '/swipper-home-page-2.png',
-    //   alt: 'TODO',
-    // },
     {
       src: '/3.png',
       alt: 'TODO',
@@ -79,16 +78,22 @@ export default class WeekendsComponent extends Vue {
     pagination: {
       el: '.swiper-pagination',
     },
-  };
-
-  components = {
-    Swiper,
-    SwiperSlide,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
   };
 
   directives = {
     swiper: directive,
   };
+
+  mounted(): void {
+    // Trick autoplay for slider
+    setInterval(() => {
+      this.mySwiper.slideNext(1000);
+    }, 5000);
+  }
 }
 </script>
 
