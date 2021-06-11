@@ -9,6 +9,7 @@
     "sourceMap": true,
     "strict": true,
     "noImplicitAny": false,
+    "strictNullChecks": false,
     "strictPropertyInitialization": false,
     "noEmit": true,
     "experimentalDecorators": true,

@@ -85,8 +85,8 @@ export default class WeekendDetailComponent extends Vue {
 
   mounted(): void {
     setTimeout(() => {
-      this.$refs.block.forEach((ref) => {
-        ref.style.backgroundColor = this.weekend.color;
+      (this.$refs.block as Element[]).forEach((ref) => {
+        (ref as any).style.backgroundColor = this.weekend.color;
       });
     }, 100);
   }
@@ -99,8 +99,8 @@ export default class WeekendDetailComponent extends Vue {
     const classToSet = this.openModal ? 'scale-100' : 'scale-0';
     const classToRemove = this.openModal ? 'scale-0' : 'scale-100';
 
-    this.$refs.modal.classList.add(classToSet);
-    this.$refs.modal.classList.remove(classToRemove);
+    (this.$refs.modal as Element).classList.add(classToSet);
+    (this.$refs.modal as Element).classList.remove(classToRemove);
   }
 
   formatDate(date: Date) {
