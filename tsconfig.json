@@ -8,6 +8,7 @@
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
+    "noImplicitAny": false,
     "strictPropertyInitialization": false,
     "noEmit": true,
     "experimentalDecorators": true,
