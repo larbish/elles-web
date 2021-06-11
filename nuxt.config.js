@@ -4,7 +4,7 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   env: {
-    strapiBaseUri,
+    API_URL: strapiBaseUri,
   },
 
   // loading: '~/components/loading.vue',
