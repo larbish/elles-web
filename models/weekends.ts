@@ -9,5 +9,6 @@ export interface FestivalWeekend {
   pricing: string;
   program: string;
   cover: string;
+  color: string;
   festivalDays: FestivalDay[];
 }

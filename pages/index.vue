@@ -140,7 +140,7 @@ export default class WeekendsComponent extends Vue {
     // Trick autoplay for slider
     setInterval(() => {
       this.mySwiper.slideNext(1000);
-    }, 5000);
+    }, 3500);
   }
 }
 </script>

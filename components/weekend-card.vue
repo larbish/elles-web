@@ -29,6 +29,7 @@
 import { Component, Vue, Prop } from 'nuxt-property-decorator';
 import { getStrapiMedia } from '../utils/medias';
 import { slugify } from '../utils/url';
+import { formatDate } from '../utils/date';
 import { FestivalWeekend } from '../models/weekends';
 
 @Component
@@ -41,7 +42,7 @@ export default class WeekendCardComponent extends Vue {
   }
 
   formatDate(date: Date) {
-    return String(date).split('-').reverse().join('/');
+    return formatDate(date);
   }
 
   getStrapiMedia(url: string): string {

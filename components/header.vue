@@ -207,8 +207,8 @@ export default class HeaderComponent extends Vue {
     const classToSet = this.open ? 'scale-100' : 'scale-0';
     const classToRemove = this.open ? 'scale-0' : 'scale-100';
 
-    (this as any).$refs.mobileMenu.classList.add(classToSet);
-    (this as any).$refs.mobileMenu.classList.remove(classToRemove);
+    this.$refs.mobileMenu.classList.add(classToSet);
+    this.$refs.mobileMenu.classList.remove(classToRemove);
   }
 
   toggleDropdown(): void {
@@ -217,8 +217,8 @@ export default class HeaderComponent extends Vue {
     const classToSet = this.dropdownOpen ? ['opacity-100', 'visible'] : ['opacity-0', 'invisible'];
     const classToRemove = this.dropdownOpen ? ['opacity-0', 'invisible'] : ['opacity-100', 'visible'];
 
-    (this as any).$refs.dropdown.classList.add(...classToSet);
-    (this as any).$refs.dropdown.classList.remove(...classToRemove);
+    this.$refs.dropdown.classList.add(...classToSet);
+    this.$refs.dropdown.classList.remove(...classToRemove);
   }
 }
 </script>
