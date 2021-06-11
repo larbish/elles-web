@@ -48,12 +48,11 @@
           </p>
         </div>
       </div>
-
-      <div v-swiper:mySwiper2="swiperComponentOption">
-        <div class="swiper-wrapper">
-          <div v-for="swipper in swippers" :key="swipper.src" class="swiper-slide">
-            <nuxt-img class="w-screen" :src="swipper.src" :alt="swipper.alt"></nuxt-img>
-          </div>
+    </div>
+    <div v-swiper:mySwiper2="swiperComponentOption" class="mb-5">
+      <div class="swiper-wrapper">
+        <div v-for="swipper in swippers" :key="swipper.src" class="swiper-slide">
+          <nuxt-img class="w-full" :src="swipper.src" :alt="swipper.alt"></nuxt-img>
         </div>
       </div>
     </div>
