@@ -28,20 +28,11 @@
         </p>
       </div>
     </div>
-    <!-- <swiper ref="mySwiper" :options="swiperComponentOption">
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-      <swiper-slide>Slide 4</swiper-slide>
-      <swiper-slide>Slide 5</swiper-slide>
-      <div slot="pagination" class="swiper-pagination"></div>
-    </swiper> -->
     <div v-swiper:mySwiper="swiperComponentOption">
       <div class="swiper-wrapper">
         <div v-for="swipper in swippers" :key="swipper.src" class="swiper-slide">
           <nuxt-img class="w-full" :src="swipper.src" :alt="swipper.alt"></nuxt-img>
         </div>
-        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
@@ -63,25 +54,82 @@ export default class WeekendsComponent extends Vue {
 
   swippers: { src: string; alt: string }[] = [
     {
-      src: '/3.png',
-      alt: 'TODO',
+      src: '/swipper-home-page-1.png',
+      alt: 'Femmes de légende',
     },
     {
-      src: '/4.png',
-      alt: 'TODO',
+      src: '/swipper-home-page-2.png',
+      alt: 'Les fables de Marie France',
+    },
+    {
+      src: '/swipper-home-page-3.png',
+      alt: 'Romantisme Allemand',
+    },
+    {
+      src: '/swipper-home-page-4.png',
+      alt: "L'Europe au crépuscule du 19ème siècle",
+    },
+    {
+      src: '/swipper-home-page-5.png',
+      alt: 'Les pionnières du cinéma',
+    },
+    {
+      src: '/swipper-home-page-6.png',
+      alt: 'Violonistes et compositrices',
+    },
+    {
+      src: '/swipper-home-page-7.png',
+      alt: "L'âme slave",
+    },
+    {
+      src: '/swipper-home-page-8.png',
+      alt: 'Chansons pour mon doudou',
+    },
+    {
+      src: '/swipper-home-page-9.png',
+      alt: 'Fantasia, Fanny Mendelssohn',
+    },
+    {
+      src: '/swipper-home-page-10.png',
+      alt: 'Médiations, Mel Bonis',
+    },
+    {
+      src: '/swipper-home-page-11.png',
+      alt: 'Dans la famille Viardot',
+    },
+    {
+      src: '/swipper-home-page-12.png',
+      alt: 'Pauline Viardot, Georges Sand et Le Berry',
+    },
+    {
+      src: '/swipper-home-page-13.png',
+      alt: 'Soul of Yiddish',
+    },
+    {
+      src: '/swipper-home-page-14.png',
+      alt: 'Solitude, Rita Strohl',
+    },
+    {
+      src: '/swipper-home-page-15.png',
+      alt: 'La révolution française des compositrices',
+    },
+    {
+      src: '/swipper-home-page-16.png',
+      alt: 'Bestiaire chanté',
+    },
+    {
+      src: '/swipper-home-page-17.png',
+      alt: 'Flûte',
+    },
+    {
+      src: '/swipper-home-page-18.png',
+      alt: 'Talestri, reine des Amazones',
     },
   ];
 
   swiperComponentOption = {
     loop: true,
     slidesPerView: 1,
-    pagination: {
-      el: '.swiper-pagination',
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
   };
 
   directives = {
