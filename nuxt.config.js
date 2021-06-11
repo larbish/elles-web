@@ -27,7 +27,11 @@ export default {
   css: ['@/assets/scss/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/strapi-accessor.ts', { src: '@/plugins/vue-awesome-swiper', mode: 'client' }],
+  plugins: [
+    '~/plugins/strapi-accessor.ts',
+    { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
+    { src: '@/plugins/youtube', ssr: false },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
