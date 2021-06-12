@@ -91,6 +91,19 @@ import { weekendsStore } from '~/store';
 @Component
 export default class InformationsComponent extends Vue {
   weekends: FestivalWeekend[] = weekendsStore.weekends;
+  head() {
+    return {
+      title: "Informations du Festival Un temps pour Elles, Val d'Oise",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            "Trouver les tarifs, plan d'accès aux chateaux et abbayes, et toutes les informations pratiques pour le Festival un temps pour Elles dans le Val d'Oise",
+        },
+      ],
+    };
+  }
 
   sanitizeHtml(html: string): string {
     return DOMPurify.sanitize(html);

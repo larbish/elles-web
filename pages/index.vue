@@ -85,8 +85,6 @@ import 'swiper/swiper-bundle.css';
 export default class WeekendsComponent extends Vue {
   weekends: FestivalWeekend[] = weekendsStore.weekends;
 
-  // videoId = 'I_-5LUzJYy8';
-
   mySwiper1: SwiperClass;
   mySwiper2: SwiperClass;
 
@@ -173,6 +171,20 @@ export default class WeekendsComponent extends Vue {
   directives = {
     swiper: directive,
   };
+
+  head() {
+    return {
+      title: "Festival Un temps pour Elles, 19 concerts dans le Val d'Oise",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Un temps pour Elles, ces compositrices oubliées mais également ces grandes femmes de l histoire qui ont forgé et inspiré des lieux emblématiques.',
+        },
+      ],
+    };
+  }
 
   mounted(): void {
     // Trick autoplay for slider

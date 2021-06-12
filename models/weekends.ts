@@ -11,4 +11,6 @@ export interface FestivalWeekend {
   cover: string;
   color: string;
   festivalDays: FestivalDay[];
+  metaTitle: string;
+  metaDescription: string;
 }

@@ -126,6 +126,19 @@ export default class WeekendDetailComponent extends Vue {
     this.weekend = await this.$strapi.findOne<FestivalWeekend>('festival-weekends', weekendId);
   }
 
+  head() {
+    return {
+      title: this.weekend.metaTitle,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.weekend.metaDescription,
+        },
+      ],
+    };
+  }
+
   sanitizeHtml(html: string): string {
     return DOMPurify.sanitize(html);
   }

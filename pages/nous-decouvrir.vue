@@ -236,14 +236,23 @@
   </section>
 </template>
 
-<style lang="scss">
-// .discover h1 {
-//   color: black;
-// }
-// .discover h2 {
-//   color: black;
-// }
-// .discover p {
-//   color: black;
-// }
-</style>
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator';
+
+@Component
+export default class NousDecouvrirComponent extends Vue {
+  head() {
+    return {
+      title: 'Découvrir festival Elles, compositrices de musique et artistes.',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Le collectif de musiciens met à jour des œuvres ignorées du répertoire qui ne figurent ni à l’édition, ni à l’enregistrement, ni au sein des programmations',
+        },
+      ],
+    };
+  }
+}
+</script>
