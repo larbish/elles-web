@@ -42,7 +42,7 @@
     <div class="hidden sm:block text-black">
       <div class="grid grid-cols-3 h-full pb-3">
         <div class="grid grid-cols-2 justify-items-center content-end">
-          <NuxtLink to="discover-us" class="nav-item">Nous découvrir</NuxtLink>
+          <NuxtLink to="nous-decouvrir" class="nav-item">Nous découvrir</NuxtLink>
           <div class="nav-item relative">
             <div class="cursor-pointer" @click="toggleDropdown()">Programmation</div>
             <div
@@ -168,7 +168,7 @@
             </div>
 
             <div class="block my-4" @click="toggleMenu()">
-              <NuxtLink to="discover-us" @click="toggleMenu()">Nous découvrir</NuxtLink>
+              <NuxtLink to="nous-decouvrir" @click="toggleMenu()">Nous découvrir</NuxtLink>
             </div>
             <div class="block my-4" @click="toggleMenu()">
               <NuxtLink to="informations" @click="toggleMenu()">Informations pratiques</NuxtLink>

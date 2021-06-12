@@ -38,7 +38,7 @@
       <div class="text-center text-white mt-5">
         <div>
           <p>Presse</p>
-          <NuxtLink to="/discover-us">
+          <NuxtLink to="/nous-decouvrir">
             <p>Nous découvrir</p>
           </NuxtLink>
           <NuxtLink to="/informations">

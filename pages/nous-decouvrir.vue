@@ -6,7 +6,7 @@
       src="/banner_mobile_decouvrir.png"
       alt="Elles, creative women mobile"
     ></nuxt-img>
-    <div class="container discover">
+    <div class="container text-black">
       <div class="flex justify-around">
         <h1 class="w-3/4 md:w-1/2 text-justify py-20 md:py-40">
           Promouvoir et diffuser le répertoire des compositrices pour une plus grande égalité dans les programmations
@@ -237,13 +237,13 @@
 </template>
 
 <style lang="scss">
-.discover h1 {
-  color: black;
-}
-.discover h2 {
-  color: black;
-}
-.discover p {
-  color: black;
-}
+// .discover h1 {
+//   color: black;
+// }
+// .discover h2 {
+//   color: black;
+// }
+// .discover p {
+//   color: black;
+// }
 </style>
