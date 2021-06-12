@@ -38,9 +38,15 @@
       <div class="text-center text-white mt-5">
         <div>
           <p>Presse</p>
-          <p>Nous découvrir</p>
-          <p>Programmation</p>
-          <p>Informations Pratiques</p>
+          <NuxtLink to="/discover-us">
+            <p>Nous découvrir</p>
+          </NuxtLink>
+          <NuxtLink to="/informations">
+            <p>Informations Pratiques</p>
+          </NuxtLink>
+          <a target="_blank" href="https://www.helloasso.com/associations/association-elles/formulaires/1/widget">
+            Nous Soutenir
+          </a>
           <p class="mb-2">Mentions légales</p>
           <a href="mailto:untempspourelles2021@gmail.com" class="text-black bg-white w-max py-1 px-2"
             >Contact festival</a

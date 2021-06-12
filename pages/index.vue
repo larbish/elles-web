@@ -6,13 +6,27 @@
           <youtube :video-id="videoId" :player-vars="{ autoplay: 1 }" />
         </div> -->
         <div class="swiper-slide">
-          <nuxt-img class="m-auto" src="/banner_title_hp.png" alt="Festival un temps pour elles"></nuxt-img>
+          <nuxt-img
+            class="m-auto hidden md:block"
+            src="/banner_title_hp.png"
+            alt="Festival un temps pour elles"
+          ></nuxt-img>
+          <nuxt-img
+            class="m-auto block md:hidden"
+            src="/banner_mobile_title_hp.png"
+            alt="Festival un temps pour elles mobile"
+          ></nuxt-img>
         </div>
         <div class="swiper-slide">
           <nuxt-img
-            class="m-auto"
+            class="m-auto hidden md:block"
             src="/banner_artists_hp.png"
             alt="Les artistes du festival un temps pour elles"
+          ></nuxt-img>
+          <nuxt-img
+            class="m-auto block md:hidden"
+            src="/banner_artists_mobile_hp.png"
+            alt="Les artistes du festival un temps pour elles mobile"
           ></nuxt-img>
         </div>
       </div>
@@ -48,11 +62,11 @@
           </p>
         </div>
       </div>
-      <div v-swiper:mySwiper2="swiperComponentOption" class="mb-5">
-        <div class="swiper-wrapper">
-          <div v-for="swipper in swippers" :key="swipper.src" class="swiper-slide">
-            <nuxt-img class="w-full" :src="swipper.src" :alt="swipper.alt"></nuxt-img>
-          </div>
+    </div>
+    <div v-swiper:mySwiper2="swiperComponentOption" class="mb-5 md:mb-16">
+      <div class="swiper-wrapper">
+        <div v-for="swipper in swippers" :key="swipper.src" class="swiper-slide">
+          <nuxt-img class="w-full" :src="swipper.src" :alt="swipper.alt"></nuxt-img>
         </div>
       </div>
     </div>
