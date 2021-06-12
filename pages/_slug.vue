@@ -7,7 +7,7 @@
       {{ formatDate(weekend.startDate) }} - {{ formatDate(weekend.endDate) }}
     </h2>
 
-    <div v-for="day in weekend.festivalDays" :key="day.id" ref="block" class="mb-8">
+    <div v-for="day in weekend.festivalDays" :key="day.id" :style="{ 'background-color': weekend.color }" class="mb-8">
       <nuxt-img class="w-full" :src="getStrapiMedia(day.cover.formats.large.url)" :alt="day.cover.name"></nuxt-img>
       <div class="md:p-10 p-5 text-white">
         <div class="grid md:grid-cols-4 grid-cols-1">
@@ -97,14 +97,6 @@ export default class WeekendDetailComponent extends Vue {
     if (!weekendId) return; // 404
 
     this.weekend = await this.$strapi.findOne<FestivalWeekend>('festival-weekends', weekendId);
-  }
-
-  mounted(): void {
-    setTimeout(() => {
-      (this.$refs.block as Element[]).forEach((ref) => {
-        (ref as any).style.backgroundColor = this.weekend.color;
-      });
-    }, 1000);
   }
 
   toggleModal(selectedDay: FestivalDay): void {
