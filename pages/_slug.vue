@@ -1,13 +1,18 @@
 <template>
-  <section v-if="weekend" class="md:container mt-5">
+  <section v-if="weekend" class="md:container md:mt-16 mt-5">
     <h1 class="text-black flex justify-center text-center md:text-4xl text-2xl">
-      #{{ weekend.id }} {{ weekend.title }}
+      {{ weekend.title }} #{{ weekend.id }}
     </h1>
-    <h2 class="text-black flex justify-center mb-5">
+    <h2 class="text-black flex justify-center md:mb-16 mt-5">
       {{ formatDate(weekend.startDate) }} - {{ formatDate(weekend.endDate) }}
     </h2>
 
-    <div v-for="day in weekend.festivalDays" :key="day.id" :style="{ 'background-color': weekend.color }" class="mb-8">
+    <div
+      v-for="day in weekend.festivalDays"
+      :key="day.id"
+      :style="{ 'background-color': weekend.color }"
+      class="md:mb-16 mb-5"
+    >
       <nuxt-img class="w-full" :src="getStrapiMedia(day.cover.formats.large.url)" :alt="day.cover.name"></nuxt-img>
       <div class="md:p-10 p-5 text-white">
         <div class="grid md:grid-cols-4 grid-cols-1">
@@ -33,6 +38,16 @@
       </div>
     </div>
 
+    <div class="text-black md:my-16 my-5 border-8 p-5" :style="{ 'border-color': weekend.color }">
+      <h2 class="flex justify-center text-center md:text-4xl text-2xl mb-5">Informations pratiques</h2>
+      <div v-html="$md.render(weekend.access)"></div>
+    </div>
+
+    <div class="text-black md:mb-16 mb-5 border-8 p-5" :style="{ 'border-color': weekend.color }">
+      <h2 class="flex justify-center text-center md:text-4xl text-2xl mb-5">Tarifs</h2>
+      <div v-html="$md.render(weekend.pricing)"></div>
+    </div>
+
     <!-- MODAL -->
     <div
       ref="modal"
@@ -49,12 +64,12 @@
         transform
         scale-0
         transition-transform
-        duration-300
+        duration-100
       "
       @click="toggleModal()"
     >
       <!-- Modal content -->
-      <div v-if="selectedDay" class="bg-white md:w-3/4 md:h-auto w-screen h-screen p-6">
+      <div v-if="selectedDay" class="bg-white md:w-3/4 md:h-auto w-screen h-screen p-6 md:rounded-lg z-50">
         <div class="flex justify-end pb-3 text-black hover:opacity-60">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,9 +82,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </div>
-        <div>
-          {{ selectedDay.description }}
-        </div>
+        <div v-html="$md.render(selectedDay.description)"></div>
       </div>
     </div>
   </section>

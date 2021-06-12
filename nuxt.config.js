@@ -27,11 +27,7 @@ export default {
   css: ['@/assets/scss/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '~/plugins/strapi-accessor.ts',
-    { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
-    { src: '@/plugins/youtube', ssr: false },
-  ],
+  plugins: ['~/plugins/strapi-accessor.ts', { src: '@/plugins/vue-awesome-swiper.js' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -51,6 +47,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/strapi',
     '@nuxtjs/dotenv',
+    '@nuxtjs/markdownit',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -70,5 +67,9 @@ export default {
     families: {
       Alegreya: true,
     },
+  },
+
+  markdownit: {
+    runtime: true, // Support `$md()`
   },
 };
