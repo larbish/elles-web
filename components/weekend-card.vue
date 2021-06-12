@@ -6,14 +6,14 @@
           <nuxt-img
             class="border-0 w-100"
             :src="getStrapiMedia(weekend.cover[1].formats.small.url)"
-            :alt="weekend.cover[1].name"
+            :alt="weekend.cover[1].alternativeText"
           >
           </nuxt-img>
           <nuxt-img
             id="top"
             class="absolute top-0 left-0 border-0 w-100"
             :src="getStrapiMedia(weekend.cover[0].formats.small.url)"
-            :alt="weekend.cover[0].name"
+            :alt="weekend.cover[0].alternativeText"
           >
           </nuxt-img>
         </div>

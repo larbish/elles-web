@@ -67,9 +67,9 @@
                 v-for="weekend in weekends"
                 :key="weekend.id"
                 :to="generateUrl(weekend)"
-                class="block capitalize py-1 px-3 hover:bg-gray-200"
+                class="block capitalize py-1 px-3 text-xl hover:bg-gray-200"
               >
-                {{ weekend.title }}
+                #{{ weekend.id }} {{ weekend.title }}
               </NuxtLink>
             </div>
           </div>

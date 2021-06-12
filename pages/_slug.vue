@@ -13,7 +13,11 @@
       :style="{ 'background-color': weekend.color }"
       class="md:mb-16 mb-5"
     >
-      <nuxt-img class="w-full" :src="getStrapiMedia(day.cover.formats.large.url)" :alt="day.cover.name"></nuxt-img>
+      <nuxt-img
+        class="w-full"
+        :src="getStrapiMedia(day.cover.formats.large.url)"
+        :alt="day.cover.alternativeText"
+      ></nuxt-img>
       <div class="md:p-10 p-5 text-white">
         <div class="grid md:grid-cols-4 grid-cols-1">
           <h2 class="flex flex-wrap md:text-4xl text-2xl text-center content-center col-span-3 uppercase md:mb-0 mb-5">
@@ -38,14 +42,16 @@
       </div>
     </div>
 
-    <div class="text-black md:my-16 my-5 border-8 p-5" :style="{ 'border-color': weekend.color }">
+    <div class="text-black md:my-16 my-5 border-2 p-5" :style="{ 'border-color': weekend.color }">
       <h2 class="flex justify-center text-center md:text-4xl text-2xl mb-5">Informations pratiques</h2>
-      <div v-html="$md.render(weekend.access)"></div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <div v-html="$md.render(sanitizeHtml(weekend.access))"></div>
     </div>
 
-    <div class="text-black md:mb-16 mb-5 border-8 p-5" :style="{ 'border-color': weekend.color }">
+    <div class="text-black md:mb-16 mb-5 border-2 p-5" :style="{ 'border-color': weekend.color }">
       <h2 class="flex justify-center text-center md:text-4xl text-2xl mb-5">Tarifs</h2>
-      <div v-html="$md.render(weekend.pricing)"></div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <div v-html="$md.render(sanitizeHtml(weekend.pricing))"></div>
     </div>
 
     <!-- MODAL -->
@@ -82,7 +88,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </div>
-        <div v-html="$md.render(selectedDay.description)"></div>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <div v-html="$md.render(sanitizeHtml(selectedDay.description))"></div>
       </div>
     </div>
   </section>
@@ -90,6 +97,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
+import DOMPurify from 'isomorphic-dompurify';
 import { getStrapiMedia } from '../utils/medias';
 import { slugify } from '../utils/url';
 import { FestivalWeekend } from '../models/weekends';
@@ -99,6 +107,12 @@ import { FestivalDay } from '~/models/days';
 @Component
 export default class WeekendDetailComponent extends Vue {
   weekend: FestivalWeekend = null;
+
+  pricing: string = null;
+
+  access: string = null;
+
+  description: string = null;
 
   selectedDay: FestivalDay = null;
 
@@ -110,6 +124,10 @@ export default class WeekendDetailComponent extends Vue {
     if (!weekendId) return; // 404
 
     this.weekend = await this.$strapi.findOne<FestivalWeekend>('festival-weekends', weekendId);
+  }
+
+  sanitizeHtml(html: string): string {
+    return DOMPurify.sanitize(html);
   }
 
   toggleModal(selectedDay: FestivalDay): void {
@@ -145,25 +163,4 @@ export default class WeekendDetailComponent extends Vue {
 }
 </script>
 
-<style lang="scss">
-.tab {
-  overflow: hidden;
-}
-.tab-content {
-  max-height: 0;
-  transition: all 0.5s;
-}
-input:checked + .tab-label .test {
-  background-color: #000;
-}
-input:checked + .tab-label .test svg {
-  transform: rotate(180deg);
-  stroke: #fff;
-}
-input:checked + .tab-label::after {
-  transform: rotate(90deg);
-}
-input:checked ~ .tab-content {
-  max-height: 100vh;
-}
-</style>
+<style lang="scss"></style>
