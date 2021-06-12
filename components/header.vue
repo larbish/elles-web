@@ -155,22 +155,33 @@
         </div>
         <div class="flex items-center mb-10 text-2xl text-white text-uppercase">
           <div class="justify-center">
-            <span>Programmation</span>
-            <ul class="ml-4">
-              <li v-for="weekend in weekends" :key="weekend.id" class="capitalize mt-3" @click="goToWeekendPage()">
-                &#8627; {{ weekend.title }}
-              </li>
-            </ul>
+            <div @click="toggleMenu()">
+              <NuxtLink to="/">Accueil</NuxtLink>
+            </div>
+            <div class="block my-4" @click="toggleMenu()">
+              <span>Programmation</span>
+              <ul class="ml-4">
+                <li v-for="weekend in weekends" :key="weekend.id" class="capitalize mt-3">
+                  <NuxtLink :to="generateUrl(weekend)"> &#8627; {{ weekend.title }} </NuxtLink>
+                </li>
+              </ul>
+            </div>
 
-            <NuxtLink to="discover-us" class="block my-4">Nous découvrir</NuxtLink>
-            <NuxtLink to="informations" class="block my-4">Informations pratiques</NuxtLink>
-            <a
-              target="_blank"
-              href="https://www.helloasso.com/associations/association-elles/formulaires/1/widget"
-              class="block"
-            >
-              Nous Soutenir
-            </a>
+            <div class="block my-4" @click="toggleMenu()">
+              <NuxtLink to="discover-us" @click="toggleMenu()">Nous découvrir</NuxtLink>
+            </div>
+            <div class="block my-4" @click="toggleMenu()">
+              <NuxtLink to="informations" @click="toggleMenu()">Informations pratiques</NuxtLink>
+            </div>
+            <div class="block my-4" @click="toggleMenu()">
+              <a
+                target="_blank"
+                href="https://www.helloasso.com/associations/association-elles/formulaires/1/widget"
+                class="block"
+              >
+                Nous Soutenir
+              </a>
+            </div>
           </div>
         </div>
       </div>

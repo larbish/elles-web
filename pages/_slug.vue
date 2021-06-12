@@ -1,5 +1,5 @@
 <template>
-  <section v-if="weekend" class="mt-5">
+  <section v-if="weekend" class="md:container mt-5">
     <h1 class="text-black flex justify-center text-center md:text-4xl text-2xl">
       #{{ weekend.id }} {{ weekend.title }}
     </h1>
@@ -9,9 +9,11 @@
 
     <div v-for="day in weekend.festivalDays" :key="day.id" ref="block" class="mb-8">
       <nuxt-img class="w-full" :src="getStrapiMedia(day.cover.formats.large.url)" :alt="day.cover.name"></nuxt-img>
-      <div class="p-10 text-white">
-        <div class="grid grid-cols-4">
-          <h2 class="flex flex-wrap text-4xl content-center col-span-3 uppercase">{{ day.title }}</h2>
+      <div class="md:p-10 p-5 text-white">
+        <div class="grid md:grid-cols-4 grid-cols-1">
+          <h2 class="flex flex-wrap md:text-4xl text-2xl text-center content-center col-span-3 uppercase md:mb-0 mb-5">
+            {{ day.title }}
+          </h2>
           <a
             class="flex justify-center uppercase hover:opacity-70 bg-transparent border-4 p-5 cursor-pointer"
             :href="day.bookingLink"
@@ -19,7 +21,7 @@
             Réserver
           </a>
         </div>
-        <div class="text-white grid grid-cols-2">
+        <div class="text-white grid md:grid-cols-2 grid-cols-1 md:mt-0 mt-5">
           <div>
             <h3 class="uppercase mb-5">{{ formatDateAndHour(day.dateAndHour) }}</h3>
             <p>{{ day.artists }}</p>
@@ -52,8 +54,22 @@
       @click="toggleModal()"
     >
       <!-- Modal content -->
-      <div v-if="selectedDay" class="bg-white w-1/2 h-1/2 p-12">
-        {{ selectedDay.description }}
+      <div v-if="selectedDay" class="bg-white md:w-3/4 md:h-auto w-screen h-screen p-6">
+        <div class="flex justify-end pb-3 text-black hover:opacity-60">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            @click="toggleModal()"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
+        <div>
+          {{ selectedDay.description }}
+        </div>
       </div>
     </div>
   </section>
@@ -92,6 +108,8 @@ export default class WeekendDetailComponent extends Vue {
   }
 
   toggleModal(selectedDay: FestivalDay): void {
+    event.stopPropagation();
+
     this.selectedDay = selectedDay;
 
     this.openModal = !this.openModal;
