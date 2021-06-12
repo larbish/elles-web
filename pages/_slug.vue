@@ -104,7 +104,7 @@ export default class WeekendDetailComponent extends Vue {
       (this.$refs.block as Element[]).forEach((ref) => {
         (ref as any).style.backgroundColor = this.weekend.color;
       });
-    }, 100);
+    }, 1000);
   }
 
   toggleModal(selectedDay: FestivalDay): void {
