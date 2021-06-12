@@ -79,6 +79,7 @@ export default {
   },
 
   sitemap: {
+    hostname: 'https://festival-untempspourelles.com',
     routes: async () => {
       const res = await axios.get(`${strapiBaseUri}/festival-weekends`);
       return res.data.map((weekend) => {
