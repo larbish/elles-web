@@ -28,7 +28,7 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator';
 import { getStrapiMedia } from '../utils/medias';
-import { slugify } from '../utils/url';
+import { generateWeekendUrl } from '../utils/url';
 import { formatDate } from '../utils/date';
 import { FestivalWeekend } from '../models/weekends';
 
@@ -38,7 +38,7 @@ export default class WeekendCardComponent extends Vue {
   weekend: FestivalWeekend;
 
   generateUrl(weekend: FestivalWeekend): string {
-    return `/${slugify(weekend.title)}_${weekend.id}`;
+    return generateWeekendUrl(weekend.title, weekend.id);
   }
 
   formatDate(date: Date) {

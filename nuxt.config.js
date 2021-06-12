@@ -1,3 +1,7 @@
+import axios from 'axios';
+// eslint-disable-next-line nuxt/no-cjs-in-config
+import { generateWeekendUrl } from './utils/url.ts';
+
 const strapiBaseUri = process.env.API_URL || 'http://localhost:1337';
 
 export default {
@@ -48,6 +52,7 @@ export default {
     '@nuxtjs/strapi',
     '@nuxtjs/dotenv',
     '@nuxtjs/markdownit',
+    '@nuxtjs/sitemap',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -71,5 +76,14 @@ export default {
 
   markdownit: {
     runtime: true, // Support `$md()`
+  },
+
+  sitemap: {
+    routes: async () => {
+      const res = await axios.get(`${strapiBaseUri}/festival-weekends`);
+      return res.data.map((weekend) => {
+        return generateWeekendUrl(weekend.title, weekend.id);
+      });
+    },
   },
 };

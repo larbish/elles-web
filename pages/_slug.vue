@@ -99,7 +99,7 @@
 import { Component, Vue } from 'nuxt-property-decorator';
 import DOMPurify from 'isomorphic-dompurify';
 import { getStrapiMedia } from '../utils/medias';
-import { slugify } from '../utils/url';
+import { generateWeekendUrl } from '../utils/url';
 import { FestivalWeekend } from '../models/weekends';
 import { formatDate } from '../utils/date';
 import { FestivalDay } from '~/models/days';
@@ -154,7 +154,7 @@ export default class WeekendDetailComponent extends Vue {
   }
 
   generateUrl(weekend: FestivalWeekend): string {
-    return `/${slugify(weekend.title)}_${weekend.id}`;
+    return generateWeekendUrl(weekend.title, weekend.id);
   }
 
   getStrapiMedia(url: string): string {

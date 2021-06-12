@@ -191,7 +191,7 @@
 
 <script lang="ts">
 import { Component, Vue, Watch } from 'nuxt-property-decorator';
-import { slugify } from '../utils/url';
+import { generateWeekendUrl } from '../utils/url';
 import { FestivalWeekend } from '../models/weekends';
 import { weekendsStore } from '~/store';
 
@@ -209,7 +209,7 @@ export default class HeaderComponent extends Vue {
   }
 
   generateUrl(weekend: FestivalWeekend): string {
-    return `/${slugify(weekend.title)}_${weekend.id}`;
+    return generateWeekendUrl(weekend.title, weekend.id);
   }
 
   toggleMenu(): void {

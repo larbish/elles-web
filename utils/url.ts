@@ -1,4 +1,4 @@
-export const slugify = (s: string) => {
+const slugify = (s: string) => {
   return s
     .toString()
     .toLowerCase()
@@ -7,4 +7,8 @@ export const slugify = (s: string) => {
     .replace(/--+/g, '-') // Replace multiple - with single -
     .replace(/^-+/, '') // Trim - from start of text
     .replace(/-+$/, '');
+};
+
+export const generateWeekendUrl = (title: string, id: number) => {
+  return `/${slugify(title)}_${id}`;
 };
