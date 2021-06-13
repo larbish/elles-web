@@ -1,6 +1,8 @@
 import { Module, VuexModule, MutationAction } from 'vuex-module-decorators';
+import axios from 'axios';
 import { FestivalWeekend } from '../models/weekends';
-import { $strapi } from '~/utils/api';
+import { strapiBaseUri } from '~/nuxt.config';
+// import { $strapi } from '~/utils/api';
 
 @Module({
   name: 'weekends',
@@ -12,7 +14,7 @@ export default class WeekendsStore extends VuexModule {
 
   @MutationAction({ mutate: ['weekends'] })
   async fetchAll(): Promise<{ weekends: FestivalWeekend[] }> {
-    const weekends = await $strapi.find('festival-weekends');
-    return { weekends };
+    const res = await axios.get(`${strapiBaseUri}/festival-weekends?_sort=startDate:ASC`);
+    return { weekends: res.data };
   }
 }

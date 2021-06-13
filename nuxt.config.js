@@ -2,7 +2,7 @@ import axios from 'axios';
 // eslint-disable-next-line nuxt/no-cjs-in-config
 import { generateWeekendUrl } from './utils/url.ts';
 
-const strapiBaseUri = process.env.API_URL || 'http://localhost:1337';
+export const strapiBaseUri = process.env.API_URL || 'http://localhost:1337';
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
