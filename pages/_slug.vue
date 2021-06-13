@@ -127,7 +127,9 @@ export default class WeekendDetailComponent extends Vue {
 
     if (!weekendId) return this.$nuxt.error({ statusCode: 404 });
 
-    this.weekend = await this.$strapi.findOne<FestivalWeekend>('festival-weekends', weekendId);
+    const weekend = await this.$strapi.findOne<FestivalWeekend>('festival-weekends', weekendId);
+
+    this.weekend = weekend;
   }
 
   head() {
