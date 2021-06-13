@@ -63,7 +63,7 @@
         </div>
       </div>
     </div>
-    <div v-swiper:mySwiper2="swiperComponentOption" class="mb-5 md:mb-16">
+    <div v-swiper:mySwiper2="swiperComponentOption" class="container mb-5 md:mb-16">
       <div class="swiper-wrapper">
         <div v-for="swipper in swippers" :key="swipper.src" class="swiper-slide">
           <nuxt-img class="w-full" :src="swipper.src" :alt="swipper.alt"></nuxt-img>

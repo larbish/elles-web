@@ -1,15 +1,8 @@
 <template>
-  <div>
-    <h1 v-if="error.statusCode === 404">Oups, vous semblez perdu !</h1>
-    <h1 v-else>Une erreur s'est produite</h1>
-    <NuxtLink to="/">Retour sur le site du Festival UN TEMPS POUR ELLES</NuxtLink>
+  <div class="text-black flex flex-col m-40">
+    <h1 class="flex w-full justify-center mb-16">Oups, cette page n'existe pas.</h1>
+    <NuxtLink class="flex w-full justify-center hover:underline" to="/">
+      Retour sur le site du Festival UN TEMPS POUR ELLES
+    </NuxtLink>
   </div>
 </template>
-
-<script>
-export default {
-  layout: 'error',
-  // eslint-disable-next-line vue/require-prop-types
-  props: ['error'], // you can set a custom layout for the error page
-};
-</script>
