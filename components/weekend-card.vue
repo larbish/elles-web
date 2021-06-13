@@ -18,7 +18,7 @@
           </nuxt-img>
         </div>
         <div class="absolute top-4 left-4 text-white text-left font-bold">
-          <h1>{{ weekend.title.toUpperCase() }}</h1>
+          <h1 class="2xl:text-2xl">{{ weekend.title.toUpperCase() }}</h1>
           <h2>{{ formatDate(weekend.startDate) }} - {{ formatDate(weekend.endDate) }}</h2>
         </div>
       </div>

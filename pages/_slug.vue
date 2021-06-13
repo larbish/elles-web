@@ -36,7 +36,8 @@
           <div class="text-white grid md:grid-cols-2 grid-cols-1 md:mt-0 mt-5">
             <div>
               <h3 class="uppercase mb-5">{{ formatDateAndHour(day.dateAndHour) }}</h3>
-              <p>{{ day.artists }}</p>
+              <!-- eslint-disable-next-line vue/no-v-html -->
+              <p v-html="$md.render(sanitizeHtml(day.artists))"></p>
             </div>
             <div class="flex flex-wrap content-end justify-end">
               <a class="cursor-pointer underline" @click="toggleModal(day)">Voir plus</a>

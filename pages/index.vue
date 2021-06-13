@@ -7,7 +7,7 @@
         </div> -->
         <div class="swiper-slide">
           <nuxt-img
-            class="m-auto hidden md:block"
+            class="m-auto hidden md:block 2xl:w-full"
             src="/banner_title_hp.png"
             alt="Festival un temps pour elles"
           ></nuxt-img>
@@ -19,7 +19,7 @@
         </div>
         <div class="swiper-slide">
           <nuxt-img
-            class="m-auto hidden md:block"
+            class="m-auto hidden md:block 2xl:w-full"
             src="/banner_artists_hp.png"
             alt="Les artistes du festival un temps pour elles"
           ></nuxt-img>
@@ -33,8 +33,8 @@
     </div>
 
     <div class="md:container">
-      <div class="flex justify-center md:mt-16 mt-5">
-        <div class="grid grid-cols-1 md:grid-cols-3 md:gap-16 gap-4">
+      <div class="flex justify-center md:mt-32 mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 md:gap-2 lg:gap-10 gap-4">
           <weekend-card v-for="weekend in weekends" :key="weekend.id" :weekend="weekend"></weekend-card>
         </div>
       </div>

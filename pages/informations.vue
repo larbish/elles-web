@@ -1,7 +1,7 @@
 <template>
   <section class="md:container">
-    <div class="text-black grid md:grid-cols-4 grid-cols-1 md:gap-32 gap-2 md:my-16 my-5">
-      <div class="md:col-span-1 flex flex-row">
+    <div class="text-black grid lg:grid-cols-4 grid-cols-1 md:gap-32 gap-2 md:my-16 my-5">
+      <div class="md:col-span-2 2xl:col-span-1 flex flex-row md:-mb-20 lg:mb-0">
         <nuxt-img
           class="w-1/2 h-full md:w-full"
           src="/gel-alcoolique.png"
@@ -9,7 +9,7 @@
         ></nuxt-img>
         <nuxt-img class="w-1/2 h-full md:w-full" src="/woman-masque.png" alt="Image porter un masque"></nuxt-img>
       </div>
-      <div class="md:col-span-3 flex flex-wrap content-center">
+      <div class="md:col-span-2 2xl:col-span-3 flex flex-wrap content-center">
         <div class="flex flex-col">
           <div class="flex items-center mb-6 w-full">
             <h2 class="pr-3 uppercase">Protocole sanitaire</h2>

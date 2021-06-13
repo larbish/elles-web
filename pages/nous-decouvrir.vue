@@ -1,6 +1,10 @@
 <template>
   <section>
-    <nuxt-img class="m-auto hidden md:block" src="/banner_decouvrir.png" alt="Elles, creative women"></nuxt-img>
+    <nuxt-img
+      class="m-auto hidden md:block 2xl:w-full"
+      src="/banner_decouvrir.png"
+      alt="Elles, creative women"
+    ></nuxt-img>
     <nuxt-img
       class="m-auto block md:hidden"
       src="/banner_mobile_decouvrir.png"
@@ -141,7 +145,7 @@
               </div>
               <div class="flex flex-end">
                 <nuxt-img
-                  class="m-auto"
+                  class="m-auto md:ml-auto md:mr-0"
                   src="/combo_logo.png"
                   alt="Logo 
               Combo, bâtir avec les artistes"
