@@ -134,12 +134,12 @@ export default class WeekendDetailComponent extends Vue {
 
   head() {
     return {
-      title: this.weekend.metaTitle,
+      title: this.weekend?.metaTitle,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.weekend.metaDescription,
+          content: this.weekend?.metaDescription,
         },
       ],
     };
