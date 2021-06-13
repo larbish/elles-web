@@ -1,10 +1,10 @@
 <template>
   <section>
     <div v-if="weekend" class="md:container md:mt-16 mt-5">
-      <h1 class="text-black flex justify-center text-center md:text-4xl text-2xl">
+      <h1 class="text-black flex justify-center text-center md:text-4xl text-xl">
         {{ weekend.title }} #{{ weekend.id }}
       </h1>
-      <h2 class="text-black flex justify-center md:mb-16 mt-5">
+      <h2 class="text-black flex justify-center md:mb-16 mb-5">
         {{ formatDate(weekend.startDate) }} - {{ formatDate(weekend.endDate) }}
       </h2>
 
