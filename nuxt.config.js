@@ -80,8 +80,15 @@ export default {
   },
 
   markdownit: {
-    runtime: true, // Support `$md()`
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    injected: true,
   },
+
+  // markdownit: {
+  //   runtime: true, // Support `$md()`
+  // },
 
   sitemap: {
     hostname: 'https://festival-untempspourelles.com',

@@ -79,7 +79,10 @@
         @click="toggleModal()"
       >
         <!-- Modal content -->
-        <div v-if="selectedDay" class="bg-white md:w-3/4 md:h-auto w-screen h-screen p-6 md:rounded-lg z-50">
+        <div
+          v-if="selectedDay"
+          class="bg-white md:w-3/4 md:h-auto w-screen h-screen p-6 md:rounded-lg z-50 overflow-auto"
+        >
           <div class="flex justify-end pb-3 text-black hover:opacity-60">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +96,8 @@
             </svg>
           </div>
           <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="$md.render(sanitizeHtml(selectedDay.description))"></div>
+          <div class="text-lg text-black" v-html="$md.render(sanitizeHtml(selectedDay.description))"></div>
+          <!-- <pre>{{ selectedDay.description }}</pre> -->
         </div>
       </div>
     </div>
