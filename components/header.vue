@@ -153,15 +153,15 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </div>
-        <div class="flex items-center mb-10 text-2xl text-white text-uppercase">
+        <div class="flex items-center mb-10 text-lg text-white text-uppercase">
           <div class="justify-center">
             <div @click="toggleMenu()">
               <NuxtLink to="/">Accueil</NuxtLink>
             </div>
             <div class="block my-4" @click="toggleMenu()">
               <span>Programmation</span>
-              <ul class="ml-4">
-                <li v-for="weekend in weekends" :key="weekend.id" class="capitalize mt-3">
+              <ul class="ml-2 mt-2">
+                <li v-for="weekend in weekends" :key="weekend.id" class="capitalize">
                   <NuxtLink :to="generateUrl(weekend)"> &#8627; {{ weekend.title }} </NuxtLink>
                 </li>
               </ul>
