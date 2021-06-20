@@ -33,10 +33,14 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/assets/scss/main.scss'],
+  css: ['@/assets/scss/main.scss', 'video.js/dist/video-js.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/strapi-accessor.ts', { src: '@/plugins/vue-awesome-swiper.js' }],
+  plugins: [
+    '~/plugins/strapi-accessor.ts',
+    { src: '@/plugins/vue-awesome-swiper.js' },
+    { src: '~plugins/nuxt-video-player-plugin.js', ssr: false },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

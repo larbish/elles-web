@@ -2,9 +2,7 @@
   <section>
     <div v-swiper:mySwiper1="swiperComponentOption">
       <div class="swiper-wrapper">
-        <!-- <div class="swiper-slide">
-          <youtube :video-id="videoId" :player-vars="{ autoplay: 1 }" />
-        </div> -->
+        <div class="swiper-slide"></div>
         <div class="swiper-slide">
           <nuxt-img
             class="m-auto hidden md:block 2xl:w-full"
@@ -33,6 +31,11 @@
     </div>
 
     <div class="md:container">
+      <div
+        v-video-player:myVideoPlayer="playerOptions1"
+        class="video-player-box mx-auto md:mt-10 mt-10"
+        :playsinline="playsinline"
+      ></div>
       <div class="flex justify-center md:mt-32 mt-10">
         <div class="grid grid-cols-1 md:grid-cols-3 md:gap-2 lg:gap-10 gap-4">
           <weekend-card v-for="weekend in weekends" :key="weekend.id" :weekend="weekend"></weekend-card>
@@ -63,6 +66,11 @@
         </div>
       </div>
     </div>
+    <div
+      v-video-player:myVideoPlayer2="playerOptions2"
+      class="video-player-box mx-auto md:mt-10 mt-10"
+      :playsinline="playsinline"
+    ></div>
     <div v-swiper:mySwiper2="swiperComponentOption" class="container mb-5 md:mb-16">
       <div class="swiper-wrapper">
         <div v-for="swipper in swippers" :key="swipper.src" class="swiper-slide">
@@ -80,6 +88,7 @@ import { Swiper as SwiperClass } from 'swiper';
 import { FestivalWeekend } from '../models/weekends';
 import { weekendsStore } from '~/store';
 import 'swiper/swiper-bundle.css';
+require('videojs-youtube');
 
 @Component
 export default class WeekendsComponent extends Vue {
@@ -163,6 +172,49 @@ export default class WeekendsComponent extends Vue {
     },
   ];
 
+  // playsinline = true;
+  playerOptions1 = {
+    // muted: true,
+    language: 'en',
+    // playbackRates: [0.7, 1.0, 1.5, 2.0],
+    sources: [
+      {
+        type: 'video/youtube',
+        src: 'https://www.youtube.com/watch?v=rn4r64Owz6A',
+      },
+    ],
+    techOrder: ['youtube'],
+    preload: 'auto',
+    // width: 1000,
+    autoplay: 1,
+    controls: 0,
+    loop: 1,
+    // responsive: true,
+    fluid: true,
+    // poster: "/static/images/author.jpg",
+  };
+
+  playerOptions2 = {
+    // muted: true,
+    language: 'en',
+    // playbackRates: [0.7, 1.0, 1.5, 2.0],
+    sources: [
+      {
+        type: 'video/youtube',
+        src: 'https://www.youtube.com/watch?v=I_-5LUzJYy8',
+      },
+    ],
+    techOrder: ['youtube'],
+    preload: 'auto',
+    // width: 1000,
+    autoplay: 1,
+    controls: 0,
+    loop: 1,
+    // responsive: true,
+    fluid: true,
+    // poster: "/static/images/author.jpg",
+  };
+
   swiperComponentOption = {
     loop: true,
     slidesPerView: 1,
@@ -189,11 +241,15 @@ export default class WeekendsComponent extends Vue {
   mounted(): void {
     // Trick autoplay for slider
     setInterval(() => {
-      this.mySwiper2.slideNext(1000);
       this.mySwiper1.slideNext(1000);
+      this.mySwiper2.slideNext(1000);
     }, 5000);
   }
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#vjs_video_83688 {
+  margin: auto;
+}
+</style>
