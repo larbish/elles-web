@@ -48,6 +48,7 @@
             <div
               ref="dropdown"
               class="
+                py-1
                 absolute
                 opacity-0
                 invisible
@@ -67,7 +68,7 @@
                 v-for="weekend in weekends"
                 :key="weekend.id"
                 :to="generateUrl(weekend)"
-                class="block capitalize py-1 px-3 text-xl hover:bg-gray-200"
+                class="block capitalize py-1 px-3 text-l hover:bg-gray-200"
               >
                 #{{ weekend.id }} {{ weekend.title }}
               </NuxtLink>
@@ -162,7 +163,7 @@
               <span>Programmation</span>
               <ul class="ml-2 mt-2">
                 <li v-for="weekend in weekends" :key="weekend.id" class="capitalize">
-                  <NuxtLink :to="generateUrl(weekend)"> &#8627; {{ weekend.title }} </NuxtLink>
+                  <NuxtLink :to="generateUrl(weekend)"> &#8627; {{ weekend.title }}</NuxtLink>
                 </li>
               </ul>
             </div>

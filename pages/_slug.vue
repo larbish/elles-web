@@ -5,7 +5,7 @@
         {{ weekend.title }} #{{ weekend.id }}
       </h1>
       <h2 class="text-black flex justify-center md:mb-16 mb-5">
-        {{ formatDate(weekend.startDate) }} - {{ formatDate(weekend.endDate) }}
+        {{ formatDateAndDay(weekend.startDate) }} - {{ formatDateAndDay(weekend.endDate) }}
       </h2>
 
       <div
@@ -29,13 +29,16 @@
             <a
               class="flex justify-center uppercase hover:opacity-70 bg-transparent border-4 p-5 cursor-pointer"
               :href="day.bookingLink"
+              target="_blank"
             >
               Réserver
             </a>
           </div>
           <div class="text-white grid md:grid-cols-2 grid-cols-1 md:mt-0 mt-5">
             <div>
-              <h3 class="uppercase mb-5">{{ formatDateAndHour(day.dateAndHour) }}</h3>
+              <h3 class="uppercase mb-5">
+                {{ formatDateAndDay(day.dateAndHour) }} - {{ formatDateAndHour(day.dateAndHour) }}
+              </h3>
               <!-- eslint-disable-next-line vue/no-v-html -->
               <p v-html="$md.render(sanitizeHtml(day.artists))"></p>
             </div>
@@ -177,7 +180,13 @@ export default class WeekendDetailComponent extends Vue {
 
   formatDateAndHour(date: Date) {
     const myDate = new Date(date);
-    return `${myDate.toLocaleDateString()} - ${myDate.getHours()}h`;
+    return `${myDate.getHours()}h${(myDate.getMinutes() < 10 ? '0' : '') + myDate.getMinutes()}`;
+  }
+
+  formatDateAndDay(date: Date) {
+    const myDate = new Date(date);
+    const options: Object = { weekday: 'long', month: 'long', day: 'numeric' };
+    return myDate.toLocaleDateString('fr-FR', options);
   }
 
   generateUrl(weekend: FestivalWeekend): string {
@@ -190,4 +199,8 @@ export default class WeekendDetailComponent extends Vue {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.my-5.border-2.p-5 a {
+  text-decoration: underline;
+}
+</style>
