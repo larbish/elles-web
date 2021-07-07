@@ -48,7 +48,7 @@
             Nous Soutenir
           </a>
           <p class="mb-2">Mentions légales</p>
-          <a href="mailto:untempspourelles2021@gmail.com" class="text-black bg-white w-max py-1 px-2"
+          <a href="mailto:festival.untempspourelles@gmail.com" class="text-black bg-white w-max py-1 px-2"
             >Contact festival</a
           >
         </div>
