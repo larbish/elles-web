@@ -2,51 +2,30 @@
   <section>
     <div v-swiper:mySwiper1="swiperComponentOption">
       <div class="swiper-wrapper">
-        <!-- <div class="swiper-slide">
-          <youtube :video-id="videoId" :player-vars="{ autoplay: 1 }" />
-        </div> -->
-        <div class="swiper-slide">
-          <nuxt-img
-            class="m-auto hidden md:block 2xl:w-full"
-            src="/banner_title_hp.png"
-            alt="Festival un temps pour elles"
-          ></nuxt-img>
-          <nuxt-img
-            class="m-auto block md:hidden"
-            src="/banner_mobile_title_hp.png"
-            alt="Festival un temps pour elles mobile"
-          ></nuxt-img>
-        </div>
-        <div class="swiper-slide">
-          <nuxt-img
-            class="m-auto hidden md:block 2xl:w-full"
-            src="/banner_artists_hp.png"
-            alt="Les artistes du festival un temps pour elles"
-          ></nuxt-img>
-          <nuxt-img
-            class="m-auto block md:hidden"
-            src="/banner_artists_mobile_hp.png"
-            alt="Les artistes du festival un temps pour elles mobile"
-          ></nuxt-img>
-        </div>
+        <a
+          class="cursor-pointer"
+          href="https://elleswomencomposers.com/festival-un-temps-pour-elles/#programmation2022"
+        >
+          <nuxt-img class="w-full" src="/banner_hp.png" alt="home" />
+        </a>
       </div>
     </div>
 
     <div class="md:container">
-      <div class="flex justify-center md:mt-32 mt-10">
-        <div class="grid grid-cols-1 md:grid-cols-3 md:gap-2 lg:gap-10 gap-4">
+      <div class="flex justify-center mt-10 md:mt-32">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-2 lg:gap-10">
           <weekend-card v-for="weekend in weekends" :key="weekend.id" :weekend="weekend"></weekend-card>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4 md:my-12">
-        <nuxt-img class="m-auto py-10" src="/pauline_viardot.png" alt="Pauline Viardot un temps pour elles"></nuxt-img>
-        <div class="flex flex-wrap content-center justify-end mt-0 mx-3 md:col-span-2 md:mx-0 text-elles-blue">
-          <div class="flex items-center mb-6 w-2/3">
+      <div class="grid grid-cols-1 gap-4 my-4 md:grid-cols-3 md:my-12">
+        <nuxt-img class="py-10 m-auto" src="/pauline_viardot.png" alt="Pauline Viardot un temps pour elles"></nuxt-img>
+        <div class="flex flex-wrap content-center justify-end mx-3 mt-0 md:col-span-2 md:mx-0 text-elles-blue">
+          <div class="flex items-center w-2/3 mb-6">
             <h2 class="pr-3">L'ÉDITO</h2>
             <div class="h-0.5 bg-blue-800 flex-1"></div>
           </div>
-          <p class="text-justify md:text-lg text-sm">
+          <p class="text-sm text-justify md:text-lg">
             Pour sa deuxième édition, le festival Un temps pour Elles devient itinérant et, grâce au soutien du
             département du Val d’Oise et de sa présidente Marie-Christine Cavecchi, propose un parcours à travers ce
             territoire riche de lieux patrimoniaux, pour ne pas dire « matrimoniaux » ! Un temps pour Elles, ces
