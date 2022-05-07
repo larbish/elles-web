@@ -49,6 +49,7 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://image.nuxtjs.org/getting-started/installation
     '@nuxt/image',
+    '@nuxtjs/netlify-files',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
