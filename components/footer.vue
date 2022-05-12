@@ -8,21 +8,6 @@
         <div class="grid grid-rows-3">
           <div class="row-span-2">
             <div class="grid md:grid-cols-2 h-full mt-4">
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @@ -35,7 +35,7 @@
-
               <div class="md:col-start-2 flex justify-end">
                 <a
                   class="block flex content-center"
@@ -54,16 +39,6 @@
         <div>
           <p>Presse</p>
           <NuxtLink to="/nous-decouvrir">
-
-
-
-
-
-
-
-
-    @@ -52,7 +52,7 @@
-
             <p>Nous découvrir</p>
           </NuxtLink>
           <NuxtLink to="/informations">
