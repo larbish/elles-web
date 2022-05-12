@@ -2,12 +2,27 @@
   <section>
     <div class="bg-black pb-10">
       <div class="flex justify-between grid grid-cols-2">
-        <NuxtLink to="/">
+        <a href="https://elleswomencomposers.com/festival-un-temps-pour-elles">
           <img class="bg-white" src="../assets/logo-un-temps-pour-elles.png" alt="Logo festival un temps pour elle" />
-        </NuxtLink>
+        </a>
         <div class="grid grid-rows-3">
           <div class="row-span-2">
             <div class="grid md:grid-cols-2 h-full mt-4">
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @@ -35,7 +35,7 @@
+
               <div class="md:col-start-2 flex justify-end">
                 <a
                   class="block flex content-center"
@@ -35,10 +50,20 @@
           </div>
         </div>
       </div>
-      <div class="text-center text-white mt-5">
+      <!-- <div class="text-center text-white mt-5">
         <div>
           <p>Presse</p>
           <NuxtLink to="/nous-decouvrir">
+
+
+
+
+
+
+
+
+    @@ -52,7 +52,7 @@
+
             <p>Nous découvrir</p>
           </NuxtLink>
           <NuxtLink to="/informations">
@@ -52,15 +77,12 @@
             >Contact festival</a
           >
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
-
 <script lang="ts">
 import Vue from 'vue';
-
 export default Vue.extend({});
 </script>
-
 <style></style>

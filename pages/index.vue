@@ -12,43 +12,33 @@
     </div>
 
     <div class="md:container">
-      <div class="flex justify-center mt-10 md:mt-32">
+      <!-- <div class="flex justify-center mt-10 md:mt-32">
         <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-2 lg:gap-10">
           <weekend-card v-for="weekend in weekends" :key="weekend.id" :weekend="weekend"></weekend-card>
         </div>
-      </div>
+      </div> -->
 
       <div class="grid grid-cols-1 gap-4 my-4 md:grid-cols-3 md:my-12">
         <nuxt-img class="py-10 m-auto" src="/pauline_viardot.png" alt="Pauline Viardot un temps pour elles"></nuxt-img>
         <div class="flex flex-wrap content-center justify-end mx-3 mt-0 md:col-span-2 md:mx-0 text-elles-blue">
           <div class="flex items-center w-2/3 mb-6">
-            <h2 class="pr-3">L'ÉDITO</h2>
+            <h2 class="pr-3">FESTIVAL 2022</h2>
             <div class="h-0.5 bg-blue-800 flex-1"></div>
           </div>
-          <p class="text-sm text-justify md:text-lg">
-            Pour sa deuxième édition, le festival Un temps pour Elles devient itinérant et, grâce au soutien du
-            département du Val d’Oise et de sa présidente Marie-Christine Cavecchi, propose un parcours à travers ce
-            territoire riche de lieux patrimoniaux, pour ne pas dire « matrimoniaux » ! Un temps pour Elles, ces
-            compositrices oubliées mais également ces grandes femmes de l’histoire qui ont forgé et inspiré des lieux
-            emblématiques. Ainsi le chemin des musiciens et du public croisera celui de Blanche de Castille aux abbayes
-            de Royaumont et de Maubuisson dont elle est la fondatrice mais également à l’Eglise Notre Dame de
-            l’Assomption de Taverny dont elle aurait posé la première pierre. Le public ira sur les pas de Ninon de
-            Lenclos Au château de Villarceaux et de la comtesse de Ségur au château de méry-sur-oise Un temps pour les
-            enfants également, tout au long du festival ; chaque samedi après-midi un concert leur sera dédié. En
-            proposant des contenus artistiques et musicaux à destination des jeunes générations, nous souhaitons mettre
-            en valeur les compositrices et créatrices du passé mais également la création contemporaine pour créer,
-            justement, ces modèles.
+          <p class="text-sm text-justify text-center md:text-lg">
+            Pour découvrir l’édition 2022 du Festival Un Temps pour Elles, rdv sur notre nouveau site :
           </p>
+          <a class="md:text-xl mx-auto" href="https://elleswomencomposers.com">https://elleswomencomposers.com</a>
         </div>
       </div>
     </div>
-    <div v-swiper:mySwiper2="swiperComponentOption" class="container mb-5 md:mb-16">
+    <!-- <div v-swiper:mySwiper2="swiperComponentOption" class="container mb-5 md:mb-16">
       <div class="swiper-wrapper">
         <div v-for="swipper in swippers" :key="swipper.src" class="swiper-slide">
           <nuxt-img class="w-full" :src="swipper.src" :alt="swipper.alt"></nuxt-img>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 

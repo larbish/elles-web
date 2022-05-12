@@ -42,9 +42,10 @@
     <div class="hidden sm:block text-black">
       <div class="grid grid-cols-3 h-full pb-3">
         <div class="grid grid-cols-2 justify-items-center content-end">
-          <NuxtLink to="nous-decouvrir" class="nav-item">Nous découvrir</NuxtLink>
+          <!-- <NuxtLink to="nous-decouvrir" class="nav-item">Nous découvrir</NuxtLink> -->
           <div class="nav-item relative">
-            <div class="cursor-pointer" @click="toggleDropdown()">Programmation</div>
+            <div></div>
+            <!-- old <div class="cursor-pointer" @click="toggleDropdown()">Programmation</div> -->
             <div
               ref="dropdown"
               class="
@@ -64,21 +65,21 @@
                 z-50
               "
             >
-              <NuxtLink
+              <!-- <NuxtLink
                 v-for="weekend in weekends"
                 :key="weekend.id"
                 :to="generateUrl(weekend)"
                 class="block capitalize py-1 px-3 text-l hover:bg-gray-200"
               >
                 #{{ weekend.id }} {{ weekend.title }}
-              </NuxtLink>
+              </NuxtLink> -->
             </div>
           </div>
         </div>
         <div class="flex justify-center content-center">
-          <NuxtLink to="/">
+          <a to="https://elleswomencomposers.com/festival-un-temps-pour-elles/">
             <img src="../assets/logo-un-temps-pour-elles.png" alt="Logo festival un temps pour elle" />
-          </NuxtLink>
+          </a>
         </div>
         <div class="grid grid-rows-3">
           <div class="row-span-2">
@@ -109,19 +110,18 @@
             </div>
           </div>
           <div class="grid grid-cols-2 justify-items-center content-end">
-            <NuxtLink to="informations" class="nav-item">Informations pratiques</NuxtLink>
-            <a
+            <!-- <NuxtLink to="informations" class="nav-item">Informations pratiques</NuxtLink> -->
+            <!-- <a
               class="nav-item"
               target="_blank"
               href="https://www.helloasso.com/associations/association-elles/formulaires/1/widget"
             >
               Nous Soutenir
-            </a>
+            </a> -->
           </div>
         </div>
       </div>
     </div>
-
     <!-- Mobile menu, show/hide based on menu state. -->
     <div
       ref="mobileMenu"
@@ -167,7 +167,6 @@
                 </li>
               </ul>
             </div>
-
             <div class="block my-4" @click="toggleMenu()">
               <NuxtLink to="nous-decouvrir" @click="toggleMenu()">Nous découvrir</NuxtLink>
             </div>
@@ -189,21 +188,16 @@
     </div>
   </nav>
 </template>
-
 <script lang="ts">
 import { Component, Vue, Watch } from 'nuxt-property-decorator';
 import { generateWeekendUrl } from '../utils/url';
 import { FestivalWeekend } from '../models/weekends';
 import { weekendsStore } from '~/store';
-
 @Component
 export default class HeaderComponent extends Vue {
   weekends: FestivalWeekend[] = weekendsStore.weekends;
-
   open = false;
-
   dropdownOpen = false;
-
   @Watch('$route', { immediate: true, deep: true })
   onUrlChange() {
     if (this.dropdownOpen) this.toggleDropdown();
@@ -215,32 +209,26 @@ export default class HeaderComponent extends Vue {
 
   toggleMenu(): void {
     this.open = !this.open;
-
     const classToSet = this.open ? 'scale-100' : 'scale-0';
     const classToRemove = this.open ? 'scale-0' : 'scale-100';
-
     (this.$refs.mobileMenu as Element).classList.add(classToSet);
     (this.$refs.mobileMenu as Element).classList.remove(classToRemove);
   }
 
   toggleDropdown(): void {
     this.dropdownOpen = !this.dropdownOpen;
-
     const classToSet = this.dropdownOpen ? ['opacity-100', 'visible'] : ['opacity-0', 'invisible'];
     const classToRemove = this.dropdownOpen ? ['opacity-0', 'invisible'] : ['opacity-100', 'visible'];
-
     (this.$refs.dropdown as Element).classList.add(...classToSet);
     (this.$refs.dropdown as Element).classList.remove(...classToRemove);
   }
 }
 </script>
-
 <style lang="scss">
 // Underline header title
 .nav-item {
   text-decoration: none;
   letter-spacing: 0.1em;
-
   display: inline-block;
   padding: 1px 10px;
   position: relative;
