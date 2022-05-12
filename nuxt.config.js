@@ -59,6 +59,21 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/markdownit',
     '@nuxtjs/sitemap',
+    [
+      '@nuxtjs/redirect-module',
+      {
+        redirect: [
+          { from: '^/abbaye-de-maubuisson_1', to: '/', statusCode: 301 },
+          { from: '^/taverny_2', to: '/', statusCode: 301 },
+          { from: '^/chteau-de-mry-sur-oise_3', to: '/', statusCode: 301 },
+          { from: '^/domaine-de-villarceaux_4', to: '/', statusCode: 301 },
+          { from: '^/domaine-de-villarceaux_5', to: '/', statusCode: 301 },
+          { from: '^/abbaye-de-royaumont_6', to: '/', statusCode: 301 },
+          { from: '^/informations', to: '/', statusCode: 301 },
+          { from: '^/nous-decouvrir', to: '/', statusCode: 301 },
+        ],
+      },
+    ],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
